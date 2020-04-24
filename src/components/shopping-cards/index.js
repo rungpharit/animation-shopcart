@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import styles from './shopping-cards.module.css';
+import Card from './card'
 
 class ShoppingCards extends Component {
   constructor(){
     super()
     this.state = {
-      goods:[
+      products:[
         {
           id:0,
           title:'Glass',
@@ -26,11 +28,16 @@ class ShoppingCards extends Component {
 
   render(){
 
+    let card = this.state.products.map((product,index) => <Card key={index} id={product.id} title={product.title} price={product.price} />)
+
     return(
-      <div >
-        Hello from shopping cards
-      </div>
-        
+      <div className={styles.mainContainer}>
+        <div className={styles.container}>
+          <div className={styles.cards}>
+            {card}
+          </div>
+        </div>
+    </div>
     )
   }
 }
