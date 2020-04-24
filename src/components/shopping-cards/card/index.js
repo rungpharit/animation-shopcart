@@ -17,7 +17,7 @@ class Card extends Component {
           <p>Price : {this.props.price}</p>
         </div>
         <div className={styles.button}>
-          <button onClick={() => {this.buyProduct()}}>Buy</button>
+          <button>Buy</button>
         </div>
     </div>
     )
